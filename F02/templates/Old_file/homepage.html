@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+ <h1>Welcome to Homepage !</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Country</th>
+    </tr>
+    {% for x in Customer %}
+    <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.country }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+ <div class = "pagination">
+     <span class ="step-links">
+         {% if Customer.has_previous %}
+            <a href="?page={{Customers.previous_page_number}}"> Previous</a>
+         {% endif %}
+     </span>
+     <span class ="current">
+         Page {{Customer.number}} of {{Customer.paginator.num_pages}}.
+     </span>
+
+     <span class="next">
+         {% if Customer.has_next %}
+         <a href="?page={{Customer.previous_page_number}}" > Next</a>
+         {% endif %}
+     </span>
+ </div>
+<!--    <button type="button"> Sign In</button>-->
+
+<!--    <button type="submit"><a href="http://127.0.0.1:8000/Signup/"> Sign Up</a></button>-->
+
+<!--    <button type="summit">Sign Out</button>-->
+
+</body>
+</html>

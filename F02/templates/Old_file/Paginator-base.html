@@ -1,0 +1,21 @@
+{% load static %}
+{% include 'partials/nav-bar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Inheritance Template Example - {% block title %} {% endblock %}
+    </title>
+    <link rel="stylesheet" type = "text/css" href="{% static "F02/main.css" %}"/>
+</head>
+<body>
+<div class ="container">
+    {% block pagecontent %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
+
+{% include 'partials/nav-bar.html' %}
